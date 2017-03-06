@@ -1,0 +1,13 @@
+<%= form_for(@image, :html => {:multipart => true} ) do |f| %>
+<div class="form-group">
+
+    <%= f.label :url %>
+    <%= f.cl_image_upload :url, :class => 'form-control' %>
+
+</div>
+
+
+    <%= f.submit :class => "btn btn-primary btn-lg"%>
+
+
+<% end %>
