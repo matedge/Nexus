@@ -1,25 +1,13 @@
 
 <%= cl_image_tag @image.url, :class => "feature" %>
 <p>Uploaded by <%=@image.user.email%> on <%= @image.created_at.strftime('%e %B %Y')%></p>
-<ul>
-  <!-- <% @image.comments.each do |comment| %>
-  <div class="panel panel-default">
-  <div class="panel-heading"><%= comment.user.email %></div>
-  <div class="panel-body">
-    <%= comment.content %> -->
-  <!-- </div>
-</div> -->
-
-  <!-- <li> <%= comment.user.email %> : <%= comment.content %> </li> -->
-  <!-- <% end %> -->
 
 
 
   <div class="row">
     <div class="col-md-4"></div>
 
-    <!-- <div class="col-md-4">
-      <%= button_to "Comment", new_image_comment_path(@image), :class => "btn btn-primary btn-lg", :method => 'get'%> -->
+  
 
         <%= button_to "Delete", @image, :class => "btn btn-primary btn-lg", :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
 

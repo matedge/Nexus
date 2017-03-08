@@ -1,3 +1,27 @@
 // Place all the styles related to the Images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.gallery-link {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
+
+.feature {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel {
+  color: black;
+}
+
+.gallery-selected {
+  border: 3px solid red;
+  border-right: 2px;
+}

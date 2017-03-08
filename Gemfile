@@ -39,6 +39,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem "font-awesome-rails"
 
+gem "image_size"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

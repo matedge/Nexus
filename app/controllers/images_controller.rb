@@ -1,5 +1,4 @@
 class ImagesController < ApplicationController
-  class ImagesController < ApplicationController
   before_action :check_if_logged_in, :only => [:new, :create, :update]
 
   def index
@@ -48,5 +47,4 @@ class ImagesController < ApplicationController
     raise params.inspect
     params.require(:image).permit(:url, :user_id, :title) # TODO: params
   end
-end
 end
