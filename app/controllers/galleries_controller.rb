@@ -23,7 +23,7 @@ class GalleriesController < ApplicationController
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
-    image_id = :
+    #image_id 
 
 
 
