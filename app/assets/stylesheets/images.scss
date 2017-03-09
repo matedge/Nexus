@@ -27,14 +27,30 @@
   box-shadow:0px 12px 22px 1px #333;
 }
 
-
-
-
-
 .upload {
   margin-top: 10%;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align: center;
+}
+
+#centered{
+  margin-top: -20px;
+  width: 100%;
+  position: relative;
+  display: center;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#content-main {
+   height: 100% !important;
+   width: 100% !important;
+   position: absolute;
+}
+
+#top {
+  margin-top: 50%;
 }

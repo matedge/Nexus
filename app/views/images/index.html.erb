@@ -1,27 +1,18 @@
+<div id="content-main">
+    <div id="centered top"></div>
+    <h1>All
+        <%= 'My ' if params[:action] == 'mine'%>Images</h1>
+    <div id="links">
+        <% @images.each do |image| %>
 
+        <%= link_to '', image_path(image), :data => {:gallery => true, :image => cloudinary_url(image.url), :id => image.id}, :class => 'gallery-link', :style => "background-image: url(#{ cl_image_path image.url })" %>
+        <% end %>
 
-<h1>All <%= 'My ' if params[:action] == 'mine'%>Images</h1>
+    </div>
 
-
-
-
-
-
-<div id="links">
-
-  <% @images.each do |image| %>
-
-  <%# link_to image_tag(image.url, :alt => image.url, :class => 'thumb'), image, :data => {:gallery => true}, :class => 'gallery-link' %>
-  <%= link_to '', image_path(image), :data => {:gallery => true, :image => cloudinary_url(image.url), :id => image.id}, :class => 'gallery-link', :style => "background-image: url(#{ cl_image_path image.url })" %>
-  <% end %>
-
-    <!-- <a href="images/apple.jpg" title="Apple" data-gallery>
-        <img src="images/thumbnails/apple.jpg" alt="Apple">
-    </a>
-    <a href="images/orange.jpg" title="Orange" data-gallery>
-        <img src="images/thumbnails/orange.jpg" alt="Orange">
-    </a> -->
+    <button id='preview-gallery' class="btn btn-primary btn-lg">
+        Preview Gallery</button>
+    <button id='create-gallery' class="btn btn-primary btn-lg">
+        Create Gallery</button>
 </div>
-
-<button id='preview-gallery' class="btn btn-primary btn-lg"> Preview Gallery</button>
-<button id='create-gallery' class="btn btn-primary btn-lg"> Create Gallery</button>
+</div>
