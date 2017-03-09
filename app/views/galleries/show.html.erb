@@ -1,1 +1,24 @@
-// maybe use images show for showing a gallery. then a start gallery button that calls photoswipe on all images.
+<h1><%= @gallery.name %> </h1>
+<p>Created by <%= @gallery.user.email %></p>
+<p> on <%= @gallery.created_at.strftime('%e %B %Y')%>
+<hr>
+
+<p><%= @gallery.blurb %></p>
+
+<div id="links">
+
+  <% @gallery.images.each do |image| %>
+
+  <%# link_to image_tag(image.url, :alt => image.url, :class => 'thumb'), image, :data => {:gallery => true}, :class => 'gallery-link' %>
+  <%= link_to '', image_path(image), :data => {:gallery => true, :image => cloudinary_url(image.url), :id => image.id}, :class => 'gallery-link', :style => "background-image: url(#{ cl_image_path image.url })" %>
+  <% end %>
+
+    <!-- <a href="images/apple.jpg" title="Apple" data-gallery>
+        <img src="images/thumbnails/apple.jpg" alt="Apple">
+    </a>
+    <a href="images/orange.jpg" title="Orange" data-gallery>
+        <img src="images/thumbnails/orange.jpg" alt="Orange">
+    </a> -->
+</div>
+
+<button id='launch-gallery' class="btn btn-primary btn-lg"> Launch Gallery</button>

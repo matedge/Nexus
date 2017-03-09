@@ -16,7 +16,7 @@ $(document).ready(function() {
         // console.log(event, this);
     });
 
-    $('#create-gallery').on("click", function(event) {
+    $('#preview-gallery').on("click", function(event) {
         var items = [];
         var $selected = $('.gallery-selected');
         var selectedCount = $selected.length;
@@ -49,12 +49,62 @@ $(document).ready(function() {
         //      items.push({ url: '...', width: '...', height: '...' })
 
         console.log(this);
-      })
+    })
 
-      $('.gallery-selected').map(function () {
-      return $(this).data('id');
-})
+    $('#launch-gallery').on("click", function(event) {
+        var items = [];
+        var $selected = $('.gallery-link');
+        var selectedCount = $selected.length;
+        $selected.each(function() {
+            var $img = $(this);
+            var url = $(this).data('image');
+            var image = new Image();
+            image.src = url;
 
+            $(image).load(function() {
+                items.push({
+                    src: url,
+                    w: image.width,
+                    h: image.height
+                });
+
+                selectedCount--;
+
+                if (selectedCount === 0) {
+                    console.log(items);
+                    callGallery(items);
+                    // THIS IS WHERE TO START THE GALLERY
+                }
+            });
+        });
+        // jquery  *. gallery.selecte .each
+        // get image url
+        // get width
+        // get height
+        //      items.push({ url: '...', width: '...', height: '...' })
+
+        console.log(this);
+    })
+
+    $('#create-gallery').on("click", function(event) {
+        // new button on click run this bad boy then ajaz request like a mofo
+        var imgIds = $('.gallery-selected').map(function() {
+            return ($(this).data('id'));
+        }).get() //never speak of this again.
+        $.ajax('/galleries', {
+            type: 'post',
+            data: {
+                gallery: {},
+                image_ids: imgIds
+            },
+            dataType: 'json'
+        }).done(function(data) {
+
+            window.location = data.url
+        });
+
+
+    });
 }); // end doc ready
 ////////////////////WORKFLOW?////////////////////////
 
