@@ -1,1 +1,15 @@
 == README
+
+
+WDI FINAL ASSIGNMENT
+
+NEXUS
+
+Nexus is a simple to use image sharing site. The user has the ability to upload images then create a gallery from any number of those images. Galleries are then able to be shared wiht family and friends with the gallery viewer having a mobile focused approach to design.
+
+PhotoSwipe was used to display galleries with the remainder of the site using Bootstrap and normal CSS.
+
+While there are many issues still to fine tune, the main functionality of the site is operational.
+
+
+The hardest parts of the project where, learning to call PhotoSwipe correctly, and dealing with the large size variation of images. End result styling was obtained with a Bootstrap template and video background, modified for my requirements.
