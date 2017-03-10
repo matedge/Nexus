@@ -51,13 +51,23 @@ $(document).ready(function() {
         console.log(this);
     })
 
-    $('#launch-gallery').on("click", function(event) {
+    $('.newgallery').on("click", function(event) {
         var items = [];
-        var $selected = $('.gallery-link');
+        var $selected = $('.newgallery img');
         var selectedCount = $selected.length;
         $selected.each(function() {
-            var $img = $(this);
-            var url = $(this).data('image');
+        
+            var $img = $(this)
+
+
+        // Kane code
+
+        // Cloudinary src
+          image_url = $img.attr("src")
+
+        // kcode end
+            var url = image_url
+            // var url = $(this).img$(this).data('image'); //////
             var image = new Image();
             image.src = url;
 
@@ -72,8 +82,9 @@ $(document).ready(function() {
 
                 if (selectedCount === 0) {
                     console.log(items);
+
                     callGallery(items);
-                    // THIS IS WHERE TO START THE GALLERY
+
                 }
             });
         });

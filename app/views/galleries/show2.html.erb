@@ -1,0 +1,28 @@
+<div id='container1'>
+    <div class='gallery-header'>
+        <div>
+            <h1><%= @gallery.name %>
+            </h1>
+            <p>Created by
+                <%= @gallery.user.email %></p>
+            <p>
+                on
+                <%= @gallery.created_at.strftime('%e %B %Y')%></p>
+            <button id='launch-gallery' class="btn btn-primary btn-lg">
+                Launch Gallery</button>
+
+            <p><%= @gallery.blurb %></p>
+        </div>
+    </div>
+    <div id="links">
+
+        <% @gallery.images.each do |image| %>
+        <div class="galleryItem">
+            <%= link_to '', image_path(image), :data => {:gallery => true, :image => cloudinary_url(image.url), :id => image.id}, :class => 'gallery-link', :style => "background-image: url(#{ cl_image_path image.url })" %>
+        </div>
+        <% end %>
+
+    </div>
+
+</div>
+</div>

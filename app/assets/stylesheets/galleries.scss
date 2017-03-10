@@ -2,58 +2,86 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//
+// .container1 {
+//
+// 	width: 80%;
+// 	margin: 30px auto;
+// 	overflow: hidden;
+//   margin-top: 15%;
+// }
+//
+// .galleryItem {
+// 	color: #797478;
+// 	font: 10px/1.5 Verdana, Helvetica, sans-serif;
+// 	float: left;
+//
+// 	width: 16%;
+// 	margin:  2% 2% 50px 2%;
+// }
+//
+// .galleryItem img {
+// 	max-width: 100%;
+// 	-webkit-border-radius: 5px;
+// 	-moz-border-radius: 5px;
+// 	border-radius: 5px;
+// }
+//
+// .gallery-header {
+//   text-align: center;
+// }
+//
+// #launch-gallery {
+//   display: block;
+// }
+//
+// @media only screen and (max-width : 940px),
+// only screen and (max-device-width : 940px){
+// 	.galleryItem {width: 21%;}
+// }
+//
+// @media only screen and (max-width : 720px),
+// only screen and (max-device-width : 720px){
+// 	.galleryItem {width: 29.33333%;}
+// }
+//
+// @media only screen and (max-width : 530px),
+// only screen and (max-device-width : 530px){
+// 	.galleryItem {width: 46%;}
+// }
+//
+// @media only screen and (max-width : 320px),
+// only screen and (max-device-width : 320px){
+// 	.galleryItem {width: 96%;}
+// 	.galleryItem img {width: 96%;}
+// 	.galleryItem h3 {font-size: 18px;}
+// 	.galleryItem p, {font-size: 18px;}
+// }
 
-.container1 {
-
-	width: 80%;
-	margin: 30px auto;
-	overflow: hidden;
-  margin-top: 15%;
+.gheader {
+  padding: .5vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
 }
-
-.galleryItem {
-	color: #797478;
-	font: 10px/1.5 Verdana, Helvetica, sans-serif;
-	float: left;
-
-	width: 16%;
-	margin:  2% 2% 50px 2%;
+.gheader div {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  width: 200px;
+  margin: .5vw;
 }
-
-.galleryItem img {
-	max-width: 100%;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+.gheader div img {
+  width: 100%;
+  height: auto;
 }
+@media screen and (max-width: 400px) {
+  .gheader div { margin: 0; }
+  .gheader { padding: 0; }
 
-.gallery-header {
-  text-align: center;
-}
-
-#launch-gallery {
-  display: block;
-}
-
-@media only screen and (max-width : 940px),
-only screen and (max-device-width : 940px){
-	.galleryItem {width: 21%;}
-}
-
-@media only screen and (max-width : 720px),
-only screen and (max-device-width : 720px){
-	.galleryItem {width: 29.33333%;}
-}
-
-@media only screen and (max-width : 530px),
-only screen and (max-device-width : 530px){
-	.galleryItem {width: 46%;}
-}
-
-@media only screen and (max-width : 320px),
-only screen and (max-device-width : 320px){
-	.galleryItem {width: 96%;}
-	.galleryItem img {width: 96%;}
-	.galleryItem h3 {font-size: 18px;}
-	.galleryItem p, {font-size: 18px;}
 }

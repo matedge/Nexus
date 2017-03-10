@@ -1,4 +1,5 @@
 class GalleriesController < ApplicationController
+
   def index
     @galleries = Gallery.all
   end
@@ -7,7 +8,8 @@ class GalleriesController < ApplicationController
   # GET /galleries/1.json
   def show
     @gallery = Gallery.find(params[:id])
-  end
+    render :layout => false
+    end
 
   # GET /galleries/new
   def new
@@ -26,9 +28,6 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new
 
     @gallery.user = @current_user
-
-
-
 
     respond_to do |format|
       if @gallery.save
